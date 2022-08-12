@@ -1,16 +1,26 @@
-
+require('dotenv').config();
+const noblox = require('noblox.js');
+const cookie = process.env.COOKIE
 const express = require('express');
 const app = express();
+
+const groupID = 14226520
 
 app.use(express.json())
 
 const PORT = process.env.PORT || 2944;
 
-app.get('/',(req,res) => {
-   return res.json({msg: 'ok'})
+function rankUp(targetid) {
+    noblox.setRank(groupID,targetid,"Patreon")
+}
+
+noblox.setCookie(cookie).then(function(){
+    console.log('Cookie set')
+}).catch(function(err){
+    console.log(err)
 })
 
-app.post("/project", (req, res) => {
+app.post("/", (req, res) => {
     console.log(req.body);
     return res.send(req.body);
 })
