@@ -22,7 +22,6 @@ noblox.setCookie(cookie).then(function(){
 
 app.post("/", (req, res) => {
     console.log(req.body);
-    return res.send(req.body);
 })
 
 app.listen(PORT, () =>{
