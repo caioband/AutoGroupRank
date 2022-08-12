@@ -7,7 +7,10 @@ app.get('/',(req,res) => {
    return res.json({msg: 'ok'})
 })
 
+app.post("/", (req, res) => {
+    return req.body
+})
 
 app.listen(PORT, () =>{
-    console.log('verything is fine')
+    console.log('Everything is fine')
 })
