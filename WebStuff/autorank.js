@@ -1,3 +1,4 @@
+const { response } = require('express');
 const express = require('express');
 const app = express();
 
@@ -11,7 +12,7 @@ app.get('/',(req,res) => {
 
 app.post("/seila", (req, res) => {
     console.log(req.body);
-    return req.body
+    return response.send(req.body);
 })
 
 app.listen(PORT, () =>{
