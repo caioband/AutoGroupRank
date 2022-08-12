@@ -8,7 +8,7 @@ const groupID = 14226520
 
 app.use(express.json())
 
-const PORT = process.env.PORT || 2944;
+const PORT = process.env.PORT || 3000;
 
 function rankUp(targetid) {
     noblox.setRank(groupID,targetid,"Patreon")
