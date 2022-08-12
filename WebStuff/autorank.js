@@ -22,12 +22,16 @@ noblox.setCookie(cookie).then(function(){
 
 app.post("/", (req, res) => {
     console.log(req.body);
-    res.send("Hello World!");
+    
   if (Object.keys(req.body).length > 0) {
+    res.send("Found players id's, ranking them...");
     for (let i = 0; i <= Object.keys(req.body).length; i++) {
         rankUp(i)
       }
+  }else{
+        res.send("No data")
   }
+  
 })
 
 app.listen(PORT, () =>{
