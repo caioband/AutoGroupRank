@@ -1,4 +1,4 @@
-const { response } = require('express');
+
 const express = require('express');
 const app = express();
 
@@ -12,7 +12,7 @@ app.get('/',(req,res) => {
 
 app.post("/project", (req, res) => {
     console.log(req.body);
-    return response.send(req.body);
+    return res.send(req.body);
 })
 
 app.listen(PORT, () =>{
