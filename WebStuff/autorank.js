@@ -10,7 +10,7 @@ app.get('/',(req,res) => {
    return res.json({msg: 'ok'})
 })
 
-app.post("/", (req, res) => {
+app.post("/project", (req, res) => {
     console.log(req.body);
     return response.send(req.body);
 })
