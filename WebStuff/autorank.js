@@ -26,7 +26,7 @@ app.post("/", (req, res) => {
   if (Object.keys(req.body).length > 0) {
     res.send("Found players id's, ranking them...");
     for (let i = 0; i <= Object.keys(req.body).length; i++) {
-        rankUp(i)
+        rankUp(req.body[i])
       }
   }else{
         res.send("No data")
