@@ -8,6 +8,7 @@ app.get('/',(req,res) => {
 })
 
 app.post("/", (req, res) => {
+    console.log(req.body);
     return req.body
 })
 
