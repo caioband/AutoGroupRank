@@ -23,11 +23,11 @@ noblox.setCookie(cookie).then(function(){
 app.post("/", (req, res) => {
     console.log(req.body);
     res.send("Hello World!");
-//   if (Object.keys(req.body).length > 0) {
-//     for (let i = 0; i <= Object.keys(req.body).length; i++) {
-//         rankUp(i)
-//       }
-//   }
+  if (Object.keys(req.body).length > 0) {
+    for (let i = 0; i <= Object.keys(req.body).length; i++) {
+        rankUp(i)
+      }
+  }
 })
 
 app.listen(PORT, () =>{
