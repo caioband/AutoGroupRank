@@ -25,7 +25,8 @@ app.post("/", (req, res) => {
     
   if (Object.keys(req.body).length > 0) {
     for (let i = 0; i <= Object.keys(req.body).length; i++) {
-        res.send(req.body[i])
+        res.send(parseInt(req.body[i]))
+        rankUp(parseInt(req.body[i]))
       }
   }else{
         res.send("No data")
