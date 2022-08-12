@@ -16,23 +16,25 @@ function rankUp(targetid) {
 
 noblox.setCookie(cookie).then(function(){
     console.log('Cookie set')
+    
+    app.post("/", (req, res) => {
+        console.log(req.body);
+        
+      if (Object.keys(req.body).length > 0) {
+        for (let i = 0; i <= Object.keys(req.body).length; i++) {
+            res.send(parseInt(req.body[i]))
+            rankUp(parseInt(req.body[i]))
+          }
+      }else{
+            res.send("No data")
+      }
+      
+    })
+    
 }).catch(function(err){
     console.log(err)
 })
 
-app.post("/", (req, res) => {
-    console.log(req.body);
-    
-  if (Object.keys(req.body).length > 0) {
-    for (let i = 0; i <= Object.keys(req.body).length; i++) {
-        res.send(parseInt(req.body[i]))
-        rankUp(parseInt(req.body[i]))
-      }
-  }else{
-        res.send("No data")
-  }
-  
-})
 
 app.listen(PORT, () =>{
     console.log('Everything is fine')
