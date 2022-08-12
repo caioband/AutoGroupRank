@@ -8,5 +8,5 @@ app.get('/',(req,res) => {
 })
 
 app.listen(PORT, () =>{
-    console.log('Everything is fine')
+    console.log('verything is fine')
 })
